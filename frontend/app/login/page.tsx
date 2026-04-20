@@ -29,7 +29,7 @@ export default function Login() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/login`,
         {
           method: "POST",
           headers: {

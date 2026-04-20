@@ -23,7 +23,7 @@ export default function AgentDashboard() {
 
     const fetchAssignedFields = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/fields?role=agent&userId=${user.id}`);
+        const res = await fetch(`https://shamba-records-xcxg.onrender.com/api/auth/fields?role=agent&userId=${user.id}`);
         const result = await res.json();
 
         if (result.success) {

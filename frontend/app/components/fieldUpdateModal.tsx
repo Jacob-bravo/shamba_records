@@ -50,7 +50,7 @@ export default function FieldUpdateModal({
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/fields/${field._id}`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/fields/${field._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ export default function FieldUpdateModal({
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/updates/${field?._id}`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/updates/${field?._id}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -121,7 +121,7 @@ export default function FieldUpdateModal({
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/delete-field/${fieldId}`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/delete-field/${fieldId}`,
         {
           method: "DELETE",
         },

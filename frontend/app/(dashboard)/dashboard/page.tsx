@@ -29,7 +29,7 @@ export default function Dashboard() {
     const fetchDashboardData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/auth/dashboard/stats`,
+          `https://shamba-records-xcxg.onrender.com/api/auth/dashboard/stats`,
         );
         const result = await res.json();
 
@@ -51,7 +51,7 @@ export default function Dashboard() {
   const fetchDashboardData = async () => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/dashboard/stats`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/dashboard/stats`,
       );
       const result = await res.json();
 
@@ -72,7 +72,7 @@ export default function Dashboard() {
     console.log(updateId)
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/updates/delete/${updateId._id}`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/updates/delete/${updateId._id}`,
         {
           method: "DELETE",
         },

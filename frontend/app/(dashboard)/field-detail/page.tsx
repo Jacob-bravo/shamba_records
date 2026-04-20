@@ -28,7 +28,7 @@ function FieldDetailsContent() {
     const fetchFieldDetail = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/auth/fields/${fieldId}`,
+          `https://shamba-records-xcxg.onrender.com/api/auth/fields/${fieldId}`,
         );
         const result = await res.json();
 
@@ -48,7 +48,7 @@ function FieldDetailsContent() {
     const fetchObservationHistory = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/auth//fetch-updates/${fieldId}`,
+          `https://shamba-records-xcxg.onrender.com/api/auth//fetch-updates/${fieldId}`,
         );
         const result = await res.json();
 
@@ -76,7 +76,7 @@ function FieldDetailsContent() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/updates/${fieldId}`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/updates/${fieldId}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

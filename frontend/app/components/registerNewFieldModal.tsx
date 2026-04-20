@@ -67,7 +67,7 @@ export default function RegisterNewFieldModal({
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/fields`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/fields`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

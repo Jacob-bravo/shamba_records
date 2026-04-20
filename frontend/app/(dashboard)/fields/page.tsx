@@ -24,7 +24,7 @@ function FieldsContent() {
     try {
       setLoading(true);
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/fields`,
+        `https://shamba-records-xcxg.onrender.com/api/auth/fields`,
       );
       const result = await res.json();
 
