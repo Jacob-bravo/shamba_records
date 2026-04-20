@@ -82,7 +82,7 @@ export default function Dashboard() {
 
       if (result.success) {
         alert("Observation deleted successfully");
-        window.location.reload();
+        fetchDashboardData();
       } else {
         alert(result.message || "Failed to delete");
       }

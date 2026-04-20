@@ -69,6 +69,45 @@ function FieldDetailsContent() {
     fetchObservationHistory();
   }, [fieldId]);
 
+    const fetchFieldDetail = async () => {
+      try {
+        const res = await fetch(
+          `https://shamba-records-xcxg.onrender.com/api/auth/fields/${fieldId}`,
+        );
+        const result = await res.json();
+
+        if (result.success) {
+          setField(result.data);
+          setSelectedStage(result.data.currentStage || "GROWING");
+        } else {
+          setError(result.message || "Field not found");
+        }
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load field details.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    const fetchObservationHistory = async () => {
+      try {
+        const res = await fetch(
+          `https://shamba-records-xcxg.onrender.com/api/auth//fetch-updates/${fieldId}`,
+        );
+        const result = await res.json();
+
+        if (result.success) {
+          setobservationHistory(result.data || []);
+        } else {
+          setError(result.message || "Failed to load your observations");
+        }
+      } catch (err) {
+        console.error(err);
+        setError("Failed to connect to server");
+      } finally {
+        setLoading(false);
+      }
+    };
   const handleDirectUpdate = async () => {
     if (!fieldId || !selectedStage || !observations) return;
 
@@ -91,7 +130,8 @@ function FieldDetailsContent() {
 
       const result = await res.json();
       if (result.success) {
-        window.location.reload();
+       fetchFieldDetail();
+       fetchObservationHistory();
       } else {
         alert(result.message || "Failed to update");
       }

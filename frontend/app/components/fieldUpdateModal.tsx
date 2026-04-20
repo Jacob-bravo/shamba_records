@@ -99,7 +99,7 @@ export default function FieldUpdateModal({
 
       const result = await res.json();
       if (result.success) {
-        window.location.reload();
+        onUpdateSuccess?.();
       } else {
         alert(result.message || "Failed to update");
       }
@@ -131,7 +131,7 @@ export default function FieldUpdateModal({
 
       if (result.success) {
         alert("Field deleted successfully");
-        window.location.reload();
+        onUpdateSuccess?.();
       } else {
         alert(result.message || "Failed to delete field");
       }
