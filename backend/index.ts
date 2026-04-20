@@ -1,6 +1,5 @@
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
-
 import express from "express";
 import cors from "cors";
 import { connectDB } from "./src/config/db";
@@ -15,6 +14,7 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204,
 };
+const PORT = process.env.PORT || ENV.PORT || 5000;
 const app = express();
 
 app.use(cors(corsOptions));
@@ -33,5 +33,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 connectDB().then(() => {
-  app.listen(ENV.PORT, () => console.log(`🚀 Server on port ${ENV.PORT}`));
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
 });
