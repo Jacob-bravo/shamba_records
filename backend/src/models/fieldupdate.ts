@@ -6,7 +6,6 @@ export interface IFieldUpdate extends Document {
   stage?:
     | "PLANTED"
     | "GROWING"
-    | "READY"
     | "HARVESTED"
     | "AT RISK"
     | "IN PROGRESS";
@@ -25,7 +24,6 @@ const FieldUpdateSchema = new Schema<IFieldUpdate>(
       enum: [
         "PLANTED",
         "GROWING",
-        "READY",
         "HARVESTED",
         "AT RISK",
         "IN PROGRESS",

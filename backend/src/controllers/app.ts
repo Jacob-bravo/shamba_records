@@ -112,7 +112,7 @@ export const getDashboardStats = async (
     const growingCount = await Field.countDocuments({
       currentStage: "GROWING",
     });
-    const readyCount = await Field.countDocuments({ currentStage: "READY" });
+    const readyCount = await Field.countDocuments({ currentStage: "HARVESTED" });
     const harvestedCount = harvestedFields;
 
     const lifecycleDistribution = [

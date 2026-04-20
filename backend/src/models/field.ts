@@ -4,7 +4,7 @@ export interface IField extends Document {
   name: string;
   cropType: string;
   plantingDate: Date;
-  currentStage: "PLANTED" | "GROWING" | "READY" | "HARVESTED" | "AT RISK"|"IN PROGRESS";
+  currentStage: "PLANTED" | "GROWING"  | "HARVESTED" | "AT RISK"|"IN PROGRESS";
   acres: number;
   location: string;
   imageUrl?: string;
@@ -19,7 +19,7 @@ const FieldSchema = new Schema<IField>(
     plantingDate: { type: Date, required: true },
     currentStage: {
       type: String,
-      enum: ["PLANTED", "GROWING", "READY", "HARVESTED", "AT RISK","IN PROGRESS"],
+      enum: ["PLANTED", "GROWING", "HARVESTED", "AT RISK","IN PROGRESS"],
       default: "PLANTED",
     },
     acres: { type: Number, required: true },

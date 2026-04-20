@@ -27,14 +27,7 @@ export default function FieldUpdateModal({
   const [error, setError] = useState("");
   const { user } = useAuth();
 
-  const stages = [
-    "PLANTED",
-    "GROWING",
-    "READY",
-    "HARVESTED",
-    "AT RISK",
-    "IN PROGRESS",
-  ];
+  const stages = ["PLANTED", "GROWING", "HARVESTED", "AT RISK", "IN PROGRESS"];
 
   const formatDate = (dateString: string) => {
     if (!dateString) return "Not set";
@@ -236,19 +229,17 @@ export default function FieldUpdateModal({
             Cancel
           </button>
           <button
-            onClick={()=>handleDeleteField(field._id,field.name)}
+            onClick={() => handleDeleteField(field._id, field.name)}
             className="px-10 py-3.5 bg-[#204e2b] hover:bg-[#386641] text-white font-medium rounded-2xl transition-all disabled:opacity-70"
           >
-             Delete Field
+            Delete Field
           </button>
           <button
             onClick={handleSubmit}
             disabled={isSubmitting}
             className="px-10 py-3.5 bg-[#204e2b] hover:bg-[#386641] text-white font-medium rounded-2xl transition-all disabled:opacity-70"
           >
-            {isSubmitting
-              ? "Saving..."
-              : "Save Update"}
+            {isSubmitting ? "Saving..." : "Save Update"}
           </button>
         </div>
       </div>

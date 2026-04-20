@@ -169,7 +169,7 @@ function FieldDetailsContent() {
                   {[
                     "PLANTED",
                     "GROWING",
-                    "READY",
+  
                     "HARVESTED",
                     "AT RISK",
                     "IN PROGRESS",
